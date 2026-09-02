@@ -1,7 +1,7 @@
 import { ForbiddenException, HttpException, Injectable, NotFoundException, Req } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Project } from 'src/core/schemas/project.schema';
+import { Project } from '../../core/schemas/project.schema'; 
 import { ProjectDto } from './dto/project.dto';
 import { updateProject } from './dto/update-project.dto';
 import { ApiFeature } from 'src/common/api-features/api-feature';
