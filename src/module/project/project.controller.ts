@@ -4,7 +4,9 @@ import { ProjectDto } from './dto/project.dto';
 import { updateProject } from './dto/update-project.dto';
 import { AuthGuard } from '../../core/guards/auth.guard';
 import { RolesGuard } from '../../core/guards/roles.guard';
-import { Role, Roles } from 'src/core/schemas/role.enum';
+import { Role , Roles } from '../../core/schemas/role.enum';
+
+
 
 @Controller('project')
 @UseGuards(AuthGuard , RolesGuard)
