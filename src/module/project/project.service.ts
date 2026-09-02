@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import { Project } from '../../core/schemas/project.schema'; 
 import { ProjectDto } from './dto/project.dto';
 import { updateProject } from './dto/update-project.dto';
-import { ApiFeature } from 'src/common/api-features/api-feature';
+import { ApiFeature } from '../../common/api-features/api-feature';
 
 @Injectable()
 export class ProjectService {
