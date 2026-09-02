@@ -1,9 +1,9 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTaskDto } from './dto/task.dto';
 import { Model } from 'mongoose';
-import { Task } from 'src/core/schemas/task.schema';
+import { Task } from '../core/schemas/task.schema';
 import { InjectModel } from '@nestjs/mongoose';
-import { Project } from 'src/core/schemas/project.schema';
+import { Project } from '../core/schemas/project.schema';
 import { UpdateTaskDto } from './dto/update-task.dto';
 
 @Injectable()

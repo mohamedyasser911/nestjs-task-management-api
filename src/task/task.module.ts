@@ -3,8 +3,8 @@ import { Module } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { TaskController } from './task.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Task, TaskSchema } from 'src/core/schemas/task.schema';
-import { Project, ProjectSchema } from 'src/core/schemas/project.schema';
+import { Task, TaskSchema } from '../core/schemas/task.schema';
+import { Project, ProjectSchema } from '../core/schemas/project.schema';
 import { JwtService } from '@nestjs/jwt';
 
 @Module({
