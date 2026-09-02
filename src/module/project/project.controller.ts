@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get,  Param, Patch, Post, Query, Req, UseGuar
 import { ProjectService } from './project.service';
 import { ProjectDto } from './dto/project.dto';
 import { updateProject } from './dto/update-project.dto';
-import { AuthGuard } from 'src/core/guards/auth.guard';
+import { AuthGuard } from '../../core/guards/auth.guard'; 
 import { RolesGuard } from 'src/core/guards/roles.guard';
 import { Role, Roles } from 'src/core/schemas/role.enum';
 
