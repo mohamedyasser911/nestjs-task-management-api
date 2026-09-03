@@ -1,22 +1,29 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config'; 
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './module/auth/auth.module';
-import { MongooseModule } from '@nestjs/mongoose/dist/mongoose.module';
 import { ProjectModule } from './module/project/project.module';
 import { TaskModule } from './task/task.module';
 
-
 @Module({
-  imports: [ ConfigModule.forRoot({
-      isGlobal: true, 
-      envFilePath: '.env', 
-    }), AuthModule , MongooseModule.forRootAsync({
-     useFactory: () => ({
-    uri: process.env.DATABASE_URL, 
-  }),
-    }), ProjectModule, TaskModule ],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    AuthModule,
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('DATABASE_URL'),
+      }),
+      inject: [ConfigService],
+    }),
+    ProjectModule,
+    TaskModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
